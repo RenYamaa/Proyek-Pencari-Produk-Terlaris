@@ -1,4 +1,4 @@
-# File yang di ignore Git
+# File yang di Abaikan Git
 /node_modules
 .env
 package-lock.json
