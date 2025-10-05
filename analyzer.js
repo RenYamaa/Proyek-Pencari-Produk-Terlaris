@@ -1,5 +1,6 @@
 const { json } = require('stream/consumers');
 const conn = require('./koneksi.js');
+const { group } = require('console');
 require('dotenv').config(); // <------ Untuk membaca .env
 
 const q = "SELECT * From produk";
@@ -51,4 +52,25 @@ conn.query(q2, (err, results) => {
     console.log(resultArray);
 });
 
-//lanjut besok, dimana akan ada "order by" dan lain2. 
+const q3 = `
+    SELECT P.Nama, SUM(D.Kuantitas_Terjual) AS Produk_Terjual
+    FROM produk AS P
+    JOIN detail_penjualan AS D
+    ON P.ID_Produk = D.ID_Produk
+    GROUP BY P.Nama
+    ORDER BY Produk_Terjual DESC
+    LIMIT 3
+`
+
+conn.query(q3, (err, results) => {
+    if(err){
+        console.log(err);
+        return conn.end('Database error');
+    }
+
+    const groupingBy = results.map(row => {
+        return row;
+    });
+
+    console.log("Barang Terlaris (Descending) = \n", groupingBy);
+});
