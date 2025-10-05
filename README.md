@@ -7,12 +7,13 @@ Proyek ini adalah tantangan yang seru karena fokusnya bergeser dari sekadar meny
 
 ## 💡 Fitur-Fitur Kunci
 1. Logic JS (Array Processing)
+   
    - Tujuan: Mencari harga tertinggi (MAX) dan terendah (MIN) serta stok tersedikit di sisi JavaScript.
    - Skill Kunci: Menggunakan fungsi array modern seperti map(), find(), dan Spread Operator (...) untuk perhitungan cepat.
-2. Logic SQL (Database Aggregation)
+3. Logic SQL (Database Aggregation)
    - Tujuan: Mencari 3 produk yang paling banyak terjual.
    - Skill Kunci: Menggunakan query SQL yang kompleks seperti JOIN, SUM(), dan GROUP BY untuk analisis data relasional yang efisien.
-3. Keamanan & Koneksi
+4. Keamanan & Koneksi
    - Menggunakan dotenv untuk menyimpan kredensial database secara aman di file .env.
   
 ## 🚀 Cara Menjalankan Program
@@ -33,6 +34,7 @@ npm install mysql2 dotenv
 ```
 
 **Eksekusi:**
+
 Jalankan script utama di terminal:
 ```bash
 node analyzer.js
